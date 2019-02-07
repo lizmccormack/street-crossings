@@ -23,28 +23,23 @@ Use the available tables to write a query that contains the boolean field `cross
 describes whether you think the passenger needed to cross the street in order to be picked up.
 
 
-##Tables
-public.fact_driver_locations
-  driver_id BIGINT, Unique identifier for a driver
-  driver_lat DOUBLE, Latitude of driver location
-  driver_lng DOUBLE, Longitude of driver location
-  occurred_at_10s TIMESTAMP, UTC timestamp that increases in 10 second
-                              increments.
+## Tables
+_public.fact_driver_locations_
+* driver_id BIGINT, Unique identifier for a driver
+* driver_lat DOUBLE, Latitude of driver location
+* driver_lng DOUBLE, Longitude of driver location
+* occurred_at_10s TIMESTAMP, UTC timestamp that increases in 10 second increments.
 
 
-public.fact_ride_pickups
-  driver_id BIGINT, Unique identifier for the driver
-  passenger_id BIGINT, Unique identifier for the requesting passenger
-  ride_id BIGINT, Unique identifier for a ride that was completed by
-                  the driver
-  wait_time DOUBLE, Seconds between picked_up_at and
-                    requested_at
-  ride_type STRING, Ride mode, eg standard, line, plus, etc
-  request_lat DOUBLE, Latitude of passenger at time of ride request
-  request_lng DOUBLE, Longitude of passenger at time of ride request
-  requested_at TIMESTAMP, UTC Timestamp at time of ride request
-  pickup_lat DOUBLE, Latitude of driver location at time of pickup
-                      event
-  pickup_lng DOUBLE, Longitude of driver location at time of pickup
-                      event
-  picked_up_at TIMESTAMP, UTC Timestamp of pickup event
+_public.fact_ride_pickups_
+* driver_id BIGINT, Unique identifier for the driver
+* passenger_id BIGINT, Unique identifier for the requesting passenger
+* ride_id BIGINT, Unique identifier for a ride that was completed by the driver
+* wait_time DOUBLE, Seconds between picked_up_at and requested_at
+* ride_type STRING, Ride mode, eg standard, line, plus, etc
+* request_lat DOUBLE, Latitude of passenger at time of ride request
+* request_lng DOUBLE, Longitude of passenger at time of ride request
+* requested_at TIMESTAMP, UTC Timestamp at time of ride request
+* pickup_lat DOUBLE, Latitude of driver location at time of pickup event
+* pickup_lng DOUBLE, Longitude of driver location at time of pickup event
+* picked_up_at TIMESTAMP, UTC Timestamp of pickup event
